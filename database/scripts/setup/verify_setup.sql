@@ -5,7 +5,7 @@
 -- ============================================
 
 -- Ensure we're in the correct PDB
-ALTER SESSION SET CONTAINER = mon_[StudentID]_[FirstName]_VendorScoring_DB;
+ALTER SESSION SET CONTAINER = mon_27906_mushi_vendoranalyticsperformance_db;
 
 PROMPT ========================================
 PROMPT DATABASE SETUP VERIFICATION REPORT
@@ -15,7 +15,7 @@ PROMPT ========================================
 PROMPT 1. PDB Status:
 SELECT name, open_mode, restricted, open_time 
 FROM v$pdbs 
-WHERE name LIKE '%VendorScoring%';
+WHERE name LIKE '%VENDORPERFORMANCE%';
 
 -- 2. Tablespace Information
 PROMPT 
@@ -51,7 +51,7 @@ SELECT
     account_status,
     created
 FROM dba_users 
-WHERE username IN ('VENDOR_ADMIN', UPPER('[FirstName]_vendor_admin'))
+WHERE username IN ('VENDOR_ADMIN', UPPER('mushi_vendor_admin'))
 ORDER BY username;
 
 -- 4. Memory Parameters
